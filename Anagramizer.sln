@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34511.98
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagramizer", "Anagramizer\Anagramizer.csproj", "{220B51EE-1D6F-4B8D-952C-3B7E9891D136}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarks", "Benchmarks\Benchmarks.csproj", "{1520FA33-A1F0-41A4-B6EE-4F24C478A422}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{220B51EE-1D6F-4B8D-952C-3B7E9891D136}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{220B51EE-1D6F-4B8D-952C-3B7E9891D136}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{220B51EE-1D6F-4B8D-952C-3B7E9891D136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1520FA33-A1F0-41A4-B6EE-4F24C478A422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1520FA33-A1F0-41A4-B6EE-4F24C478A422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1520FA33-A1F0-41A4-B6EE-4F24C478A422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1520FA33-A1F0-41A4-B6EE-4F24C478A422}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

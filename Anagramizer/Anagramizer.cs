@@ -15,7 +15,7 @@
         {
             var words = new HashSet<string>(100);
 
-            _root.FindWords(words, letters.ToList(), maxLength, new Stack<char>(maxLength));
+            _root.FindWords(words, letters.ToList(), maxLength, new Word(maxLength));
             return words;
         }
     }

@@ -47,11 +47,11 @@ namespace Anagramizer
             child.RemoveWord(lettersRemaining[1..]);
         }
 
-        public void FindWords(HashSet<string> words, List<char> remainingLetters, int depthRemaining, Stack<char> currentWord)
+        public void FindWords(HashSet<string> words, List<char> remainingLetters, int depthRemaining, Word currentWord)
         {
             if (_isWord)
             {
-                words.Add(new string(currentWord.ToArray()));
+                words.Add(currentWord.ToString());
             }
 
             if (depthRemaining == 0)
