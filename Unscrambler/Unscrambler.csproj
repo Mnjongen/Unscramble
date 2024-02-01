@@ -17,6 +17,7 @@
     <Description>Unscrambler is a highly optimized dotnet package. It implements an algorithm that
       is able to find all words that can be made from a list of letters.</Description>
     <Copyright>This package is licensed under the MIT license found at ./LICENSE</Copyright>
+    <PackageTags>library, words, letters, filter, dictionary, opensource, .net, c#, dotnet, aot</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
