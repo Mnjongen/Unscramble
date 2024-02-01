@@ -10,16 +10,27 @@ namespace Unscrambler.WordLoader;
 /// </remarks>
 public class BasicWordLoader : IWordLoader
 {
-    /// <inheritdoc />
-    public async Task<bool> LoadFromFileAsync(IUnscrambler unscrambler, string filePath, CancellationToken ct = default)
+    private readonly string _filePath;
+
+    /// <summary>
+    /// Creates a new instance of <see cref="BasicWordLoader"/>.
+    /// </summary>
+    /// <param name="filePath">The path to the file containing the words.</param>
+    public BasicWordLoader(string filePath)
     {
-        if (!File.Exists(filePath))
+        _filePath = filePath;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> LoadWordsAsync(IUnscrambler unscrambler, CancellationToken ct = default)
+    {
+        if (!File.Exists(_filePath))
         {
             return false;
         }
         try
         {
-            var words = File.ReadLinesAsync(filePath, ct);
+            var words = File.ReadLinesAsync(_filePath, ct);
             await foreach (var word in words)
             {
                 unscrambler.AddWord(word);
