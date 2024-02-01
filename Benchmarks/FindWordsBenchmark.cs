@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 using Microsoft.Diagnostics.Tracing.Parsers.Clr;
+using Unscrambler;
 
 namespace Benchmarks
 {
@@ -11,7 +12,7 @@ namespace Benchmarks
         private const string _letters = "letters";
 
         private readonly char[] _lettersArray = _letters.ToCharArray();
-        private readonly Anagramizer.BasicAnagramizer _trie = new();
+        private readonly BasicUnscrambler _trie = new();
 
         public FindWordsBenchmark()
         {
@@ -51,17 +52,7 @@ namespace Benchmarks
         [Benchmark]
         public HashSet<string> Run()
         {
-            return _trie.GetWords(_lettersArray, 6);
-        }
-        [Benchmark]
-        public HashSet<string> RunOptimized()
-        {
-            return _trie.GetWordsOptimized(_lettersArray, 6);
-        }
-        [Benchmark]
-        public HashSet<string> RunWithStringBuilder()
-        {
-            return _trie.GetWords(_lettersArray, 6);
+            return _trie.Unscramble(_lettersArray, 6);
         }
     }
 }
@@ -120,4 +111,4 @@ namespace Benchmarks
 //| -------------------- | --------:| --------:| --------:| ------:| -------- -:|
 //| Run                  | 10.99 us | 0.142 us | 0.133 us | 0.3967 | 5.02 KB    |
 //| RunOptimized         | 10.75 us | 0.208 us | 0.317 us | 0.3967 | 5.02 KB    |
-//| RunWithStringBuilder | 10.67 us | 0.212 us | 0.226 us | 0.3967 | 5.02 KB    |
+//| RunWithStringBuilder | 10.67 us | 0.212 us | 0.226 us | 0.3967 | 5.02 KB    | This is the one that will be used going forward
