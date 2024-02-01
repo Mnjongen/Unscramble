@@ -11,25 +11,24 @@ namespace Unscrambler.WordLoader;
 public class BasicWordLoader : IWordLoader
 {
     /// <inheritdoc />
-    public async Task<IUnscrambler?> LoadFromFileAsync(string filePath, CancellationToken ct = default)
+    public async Task<bool> LoadFromFileAsync(IUnscrambler unscrambler, string filePath, CancellationToken ct = default)
     {
         if (!File.Exists(filePath))
         {
-            return null;
+            return false;
         }
         try
         {
             var words = File.ReadLinesAsync(filePath, ct);
-            var unscrambler = new BasicUnscrambler();
             await foreach (var word in words)
             {
                 unscrambler.AddWord(word);
             }
-            return unscrambler;
+            return true;
         }
         catch (Exception)
         {
-            return null;
+            return false;
         }
     }
 }
