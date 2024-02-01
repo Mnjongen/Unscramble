@@ -8,6 +8,14 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Mnjongen/Unscrambler</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/Mnjongen/Unscrambler</PackageProjectUrl>
+    <Authors>Mnjongen</Authors>
+    <Title>Unscrambler</Title>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Description>Unscrambler is a highly optimized dotnet package. It implements an algorithm that is able to find all words that can be made from a list of letters.</Description>
+    <Copyright>This package is licensed under the MIT license found at ./LICENSE</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
