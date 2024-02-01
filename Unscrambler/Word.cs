@@ -1,8 +1,9 @@
-﻿namespace Anagramizer
+﻿namespace Unscrambler
 {
     /// <summary>
     /// A word is a sequence of characters. It is used to build up words without having to allocate a new string each time.
     /// </summary>
+    [Obsolete("This class is no longer used.")]
     public class Word
     {
         private readonly char[] _chars;
@@ -40,9 +41,9 @@
         /// <summary>
         /// Pop a character off the end of a word.
         /// </summary>
-        public char Pop()
+        public void Pop()
         {
-            return _chars[--_size];
+            _size--;
         }
 
         /// <summary>

@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Anagramizer\Anagramizer.csproj" />
+    <ProjectReference Include="..\Unscrambler\Unscrambler.csproj" />
   </ItemGroup>
 
 </Project>
