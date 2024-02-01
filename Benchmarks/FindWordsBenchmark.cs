@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 using Microsoft.Diagnostics.Tracing.Parsers.Clr;
-using Unscrambler;
+using Unscrambler.Basic;
 
 namespace Benchmarks
 {
