@@ -3,6 +3,10 @@
 Unscrambler is a .NET package that can help you find all possible words from a list of letters. It is useful for solving word puzzles, crossword clues, or anagrams. Unscrambler is fast, easy to use, and highly optimized.
 
 [![publish](https://github.com/Mnjongen/Unscrambler/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/Mnjongen/Unscrambler/actions/workflows/publish.yml)
+[![NuGet Version](https://img.shields.io/nuget/v/Unscrambler)](https://www.nuget.org/packages/Unscrambler/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Unscrambler)](https://www.nuget.org/packages/Unscrambler/)
+
+
 
 ## Installation
 
