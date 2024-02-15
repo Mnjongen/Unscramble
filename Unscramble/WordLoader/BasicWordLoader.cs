@@ -1,6 +1,6 @@
-using Unscrambler.Basic;
+using Unscramble.Basic;
 
-namespace Unscrambler.WordLoader;
+namespace Unscramble.WordLoader;
 
 /// <summary>
 /// Loads words from a file into a <see cref="BasicUnscrambler"/>.
@@ -22,7 +22,7 @@ public class BasicWordLoader : IWordLoader
     }
 
     /// <inheritdoc />
-    public async Task<bool> LoadWordsAsync(IUnscrambler unscrambler, CancellationToken ct = default)
+    public async Task<bool> LoadWordsAsync(IUnscrambler unscramble, CancellationToken ct = default)
     {
         if (!File.Exists(_filePath))
         {
@@ -33,7 +33,7 @@ public class BasicWordLoader : IWordLoader
             var words = File.ReadLinesAsync(_filePath, ct);
             await foreach (var word in words)
             {
-                unscrambler.AddWord(word);
+                unscramble.AddWord(word);
             }
             return true;
         }
