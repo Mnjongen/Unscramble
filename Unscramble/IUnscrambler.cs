@@ -1,7 +1,7 @@
-﻿namespace Unscrambler;
+﻿namespace Unscramble;
 
 /// <summary>
-/// Represents an Unscrambler. It is used to find all words that can be formed from a given set of letters.
+/// Represents an Unscramble. It is used to find all words that can be formed from a given set of letters.
 /// </summary>
 public interface IUnscrambler
 {

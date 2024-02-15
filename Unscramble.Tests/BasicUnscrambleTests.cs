@@ -1,16 +1,16 @@
 using System.Diagnostics;
 using Xunit.Abstractions;
 
-namespace Unscrambler.Tests;
+namespace Unscramble.Tests;
 
 [Collection("FindWords")]
-public class BasicUnscramblerTests
+public class BasicUnscrambleTests
 {
     private readonly ITestOutputHelper _output;
     private readonly WordListFixture _fixture;
 
     // Load words
-    public BasicUnscramblerTests(ITestOutputHelper output, WordListFixture fixture)
+    public BasicUnscrambleTests(ITestOutputHelper output, WordListFixture fixture)
     {
         _output = output;
         _fixture = fixture;
@@ -47,7 +47,7 @@ public class BasicUnscramblerTests
         // Output how many times faster unscramble is than brute force
         _output.WriteLine($"Unscramble is {Math.Round(bruteForceTimespan.TotalMicroseconds / unscrambleTimespan.TotalMicroseconds, 3)} times faster than brute force");
 
-        // Check that the unscrambler found all the words
+        // Check that the Unscrambler found all the words
         Assert.Equal(checkList.Count, unscrambled.Count);
 
         foreach(var word in checkList)

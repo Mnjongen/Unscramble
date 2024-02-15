@@ -1,6 +1,6 @@
-﻿using Unscrambler.Basic;
+﻿using Unscramble.Basic;
 
-namespace Unscrambler.Tests
+namespace Unscramble.Tests
 {
     [CollectionDefinition("FindWords")]
     public class FindWordsCollection : ICollectionFixture<WordListFixture>
@@ -11,7 +11,7 @@ namespace Unscrambler.Tests
     }
 
     /// <summary>
-    /// Use this class to load the word list and unscrambler once for all tests. This will speed up the tests.<br/>
+    /// Use this class to load the word list and Unscrambler once for all tests. This will speed up the tests.<br/>
     /// It also moves the code for loading words, from the test file to this fixture.
     /// </summary>
     public class WordListFixture
@@ -36,7 +36,7 @@ namespace Unscrambler.Tests
 
             _words = File.ReadAllLines(WordListPath);
 
-            // Add words to unscrambler
+            // Add words to the Unscrambler
             foreach (var word in _words)
             {
                 _unscrambler.AddWord(word);

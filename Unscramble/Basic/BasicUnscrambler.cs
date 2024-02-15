@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Unscrambler.Basic;
+namespace Unscramble.Basic;
 
 /// <inheritdoc />
 public class BasicUnscrambler : IUnscrambler

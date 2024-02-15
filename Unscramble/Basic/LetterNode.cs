@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Unscrambler.Basic;
+namespace Unscramble.Basic;
 
 /// <summary>
 /// Represents a letter node in the trie.
