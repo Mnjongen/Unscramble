@@ -16,7 +16,8 @@
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Description>Unscramble is a highly optimized dotnet package. It implements an algorithm that
       is able to find all words that can be made from a list of letters.</Description>
-    <Copyright>This package is licensed under the MIT license. Full license can be found in the source code.</Copyright>
+    <Copyright>This package is licensed under the MIT license. Full license can be found in the
+      source code.</Copyright>
     <PackageTags>library, words, letters, filter, dictionary, opensource, .net, c#, dotnet</PackageTags>
   </PropertyGroup>
 

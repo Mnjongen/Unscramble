@@ -13,9 +13,16 @@ public interface IUnscrambler
     /// <summary>
     /// Retrieves a set of words based on the given letters.
     /// </summary>
-    /// <param name="letters">The letters used to form the words.</param>
-    /// <param name="maxLength">The maximum length of the words.</param>
+    /// <param name="letters">The letters to use when unscrambling.</param>
+    /// <param name="options">Extra options for unscrambling.</param>
     /// <returns>A set of words.</returns>
+    HashSet<string> Unscramble(char[] letters, UnscrambleOptions options);
+    /// <summary>
+    /// Retrieves a set of words based on the given letters.
+    /// </summary>
+    /// <param name="letters">The letters to use when unscrambling.</param>
+    /// <param name="maxLength">The maximum length of the words to return.</param>
+    /// <returns></returns>
     HashSet<string> Unscramble(char[] letters, int maxLength = 32);
     /// <summary>
     /// Removes a word from the dictionary.

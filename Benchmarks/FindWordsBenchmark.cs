@@ -1,5 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
-using Microsoft.Diagnostics.Tracing.Parsers.Clr;
+using Unscramble;
 using Unscramble.Basic;
 
 namespace Benchmarks
@@ -9,12 +9,19 @@ namespace Benchmarks
     {
         private const string _url = "https://raw.githubusercontent.com/dolph/dictionary/master/unix-words";
         private const string _file = "C:\\Users\\brent\\Documents\\PersonalProjects\\words.txt";
-        private const string _letters = "letters";
+        private const string _letters = "lettersabcd";
 
         private readonly char[] _lettersArray = _letters.ToCharArray();
         private readonly BasicUnscrambler _trie = new();
+        private readonly BasicUnscramblerNew _trieNew = new();
 
-        public FindWordsBenchmark()
+        private UnscrambleOptions _options = null!;
+
+        [Params(10)]
+        public int _maxLength;
+
+        [GlobalSetup]
+        public void Setup()
         {
             if (!File.Exists(_file))
             {
@@ -46,13 +53,24 @@ namespace Benchmarks
                     continue;
                 }
                 _trie.AddWord(word);
+                _trieNew.AddWord(word);
             }
+
+            _options = new UnscrambleOptions
+            {
+                MaxLength = _maxLength
+            };
         }
 
-        [Benchmark]
-        public HashSet<string> Run()
+        [Benchmark(Baseline = true)]
+        public HashSet<string> RunNormal()
         {
-            return _trie.Unscramble(_lettersArray, 6);
+            return _trie.Unscramble(_lettersArray, _maxLength);
+        }
+        [Benchmark]
+        public HashSet<string> RunNew()
+        {
+            return _trieNew.Unscramble(_lettersArray, _maxLength);
         }
     }
 }
@@ -112,3 +130,15 @@ namespace Benchmarks
 //| Run                  | 10.99 us | 0.142 us | 0.133 us | 0.3967 | 5.02 KB    |
 //| RunOptimized         | 10.75 us | 0.208 us | 0.317 us | 0.3967 | 5.02 KB    |
 //| RunWithStringBuilder | 10.67 us | 0.212 us | 0.226 us | 0.3967 | 5.02 KB    | This is the one that will be used going forward
+
+
+// Changed from a dictionary to a list of tuples (No data, about 20% improvement)
+
+
+// Changed from foreach to for loop (and increased the input letters)
+
+//| Method     | Mean      | Error    | StdDev    | Median    | Gen0    | Gen1    | Allocated  |
+//| ---------- | ---------:| --------:| ---------:| ---------:| -------:| -------:| ----------:|
+//| RunNormal  | 223.6 us  | 4.45 us  | 12.69 us  | 219.6 us  | 5.3711  | 0.7324  | 65.98 KB   |
+//| RunNew     | 201.3 us  | 4.00 us  | 11.15 us  | 202.2 us  | 5.3711  | 0.7324  | 65.98 KB   |
+

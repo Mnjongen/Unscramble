@@ -17,6 +17,14 @@ public class BasicUnscrambler : IUnscrambler
         _root.RemoveWord(word);
     }
     /// <inheritdoc />
+    public HashSet<string> Unscramble(char[] letters, UnscrambleOptions options)
+    {
+        var words = new HashSet<string>(100);
+
+        _root.FindWords(words, letters.ToList(), options.MaxLength, new StringBuilder(options.MaxLength), options);
+        return words;
+    }
+    /// <inheritdoc />
     public HashSet<string> Unscramble(char[] letters, int maxLength = 32)
     {
         var words = new HashSet<string>(100);

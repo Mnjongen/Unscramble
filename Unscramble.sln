@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks", "Benchmarks\Be
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unscramble.Tests", "Unscramble.Tests\Unscramble.Tests.csproj", "{993E5B97-E360-4F60-8AFD-E8D89C5755CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unscramble.TestRunner", "Unscramble.TestRunner\Unscramble.TestRunner.csproj", "{6E72EF0F-66FE-46C2-8284-9B67747786CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{993E5B97-E360-4F60-8AFD-E8D89C5755CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{993E5B97-E360-4F60-8AFD-E8D89C5755CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{993E5B97-E360-4F60-8AFD-E8D89C5755CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E72EF0F-66FE-46C2-8284-9B67747786CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E72EF0F-66FE-46C2-8284-9B67747786CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E72EF0F-66FE-46C2-8284-9B67747786CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E72EF0F-66FE-46C2-8284-9B67747786CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
